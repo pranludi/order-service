@@ -29,6 +29,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-webflux")
   //
   implementation("org.springframework.cloud:spring-cloud-starter-config")
+  implementation("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
   //
   runtimeOnly("org.postgresql:r2dbc-postgresql")
   //
@@ -38,6 +39,7 @@ dependencies {
   //
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("org.springframework.boot:spring-boot-testcontainers")
+  testImplementation("org.springframework.cloud:spring-cloud-stream-test-binder")
   testImplementation("io.projectreactor:reactor-test")
   testImplementation("org.testcontainers:junit-jupiter")
   testImplementation("org.testcontainers:postgresql")
