@@ -27,6 +27,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
   implementation("org.springframework.boot:spring-boot-starter-validation")
   implementation("org.springframework.boot:spring-boot-starter-webflux")
+  implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
   //
   implementation("org.springframework.cloud:spring-cloud-starter-config")
   implementation("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
@@ -40,11 +41,14 @@ dependencies {
   testImplementation("org.springframework.boot:spring-boot-starter-test")
   testImplementation("org.springframework.boot:spring-boot-testcontainers")
   testImplementation("org.springframework.cloud:spring-cloud-stream-test-binder")
+  testImplementation("org.springframework.security:spring-security-test")
   testImplementation("io.projectreactor:reactor-test")
   testImplementation("org.testcontainers:junit-jupiter")
   testImplementation("org.testcontainers:postgresql")
   testImplementation("org.testcontainers:r2dbc")
+  testImplementation("org.testcontainers:rabbitmq")
   testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
+  testImplementation("com.github.dasniko:testcontainers-keycloak:3.7.0")
   testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
