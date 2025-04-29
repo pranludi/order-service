@@ -27,7 +27,7 @@ spring:
     function:
       definition: dispatchOrder
     stream:
-      binders:
+      bindings:
         dispatchOrder-in-0:
           destination: order-dispatched
           group: ${spring.application.name}
