@@ -61,8 +61,8 @@ class OrderRepositoryR2dbcTests {
     void whenCreateOrderNotAuthenticatedThenNoAuditMetadata() {
         var rejectedOrder = OrderService.buildRejectedOrder("1234567890", 3);
         StepVerifier.create(orderRepository.save(rejectedOrder))
-            .expectNextMatches(order -> Objects.isNull(order.createdDate()) &&
-                Objects.isNull(order.lastModifiedDate()))
+            .expectNextMatches(order -> Objects.isNull(order.createdBy()) &&
+                Objects.isNull(order.lastModifiedBy()))
             .verifyComplete();
     }
 
@@ -71,8 +71,8 @@ class OrderRepositoryR2dbcTests {
     void whenCreateOrderAuthenticatedThenAuditMetadata() {
         var rejectedOrder = OrderService.buildRejectedOrder("1234567890", 3);
         StepVerifier.create(orderRepository.save(rejectedOrder))
-            .expectNextMatches(order -> order.createdDate().equals("marlena") &&
-                order.lastModifiedDate().equals("marlena"))
+            .expectNextMatches(order -> order.createdBy().equals("marlena") &&
+                order.lastModifiedBy().equals("marlena"))
             .verifyComplete();
     }
 }
