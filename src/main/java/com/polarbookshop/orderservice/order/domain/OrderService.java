@@ -56,17 +56,17 @@ public class OrderService {
             .flatMap(orderRepository::save);
     }
 
-    private Order buildDispatchedOrder(Order extstingOrder) {
+    private Order buildDispatchedOrder(Order existingOrder) {
         return new Order(
-            extstingOrder.id(),
-            extstingOrder.bookIsbn(),
-            extstingOrder.bookName(),
-            extstingOrder.bookPrice(),
-            extstingOrder.quantity(),
+            existingOrder.id(),
+            existingOrder.bookIsbn(),
+            existingOrder.bookName(),
+            existingOrder.bookPrice(),
+            existingOrder.quantity(),
             OrderStatus.DISPATCHED,
-            extstingOrder.createdDate(),
-            extstingOrder.lastModifiedDate(),
-            extstingOrder.version()
+            existingOrder.createdDate(),
+            existingOrder.lastModifiedDate(),
+            existingOrder.version()
         );
     }
 
